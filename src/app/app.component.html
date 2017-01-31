@@ -1,3 +1,14 @@
 <h1>
   {{title}}
+  <div ngxSelect="counter" #thing="ngxSelect"></div>
+  <div [ngxSelect]="counterFn" #thing2="ngxSelect"></div>
+
+  <ul>
+    <li> sync, {{thing.value}} </li>
+    <li> async {{thing.value$ | async }} </li>
+    <li> fn sync {{thing2.value}} </li>
+    <li> fn async {{thing2.value$ | async }} </li>
+  </ul>
+
+  <button (click)="increment()" type="button">+</button> - <button (click)="decrement()" type="button">-</button>
 </h1>
